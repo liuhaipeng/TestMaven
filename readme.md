@@ -83,7 +83,7 @@ task androidSourcesJar(type: Jar) {
 artifacts {
     archives androidSourcesJar
 }
-5.在终端执行
+5.在终端执行 先clean 工程
 //执行上传任务到bintray上，成功之后会在网站看到上传上去的项目，就可以使用了，替换自己的PbintrayUser，PbintrayKey（获取方式自行查看）
 //gradlew clean build bintrayUpload -PbintrayUser=lhp -PbintrayKey=219e22864958870e718116f7d78cd0216c3be23a -PdryRun=false
 成功后会提示build successful ，这时候就能在远程bintray仓库中 【 组织/maven/ 】下看到core了 
