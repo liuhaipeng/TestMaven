@@ -1,14 +1,13 @@
 PS:上传自己的library 到 jcenter,maven
 
-### 1、Maven是什么？
-让项目可重复使用、易维护、更容易理解,是一个项目管理工具，主要用于存放一些类库、插件等方便共享。
-### 2.Maven仓库在哪里？ 
-Maven 就类似git，gi作用重在区别版本之间的差异，而Maven作用重在共享依赖库。
-依赖包可以放在本地或者在maven、jcenter
-### 3.目的
+### 1.maven是什么？
+让项目可重复使用、易维护、更容易理解,是一个项目管理工具，主要用于存放一些类库、插件等方便共享。 
+Maven 就类似git，git作用重在区别版本之间的差异，而Maven作用重在共享依赖库。
+library可以放在本地或者在maven、jcenter
+### 2.目的
 我们最终需要发布的library是core
 最终目的方式： implementation 'com.example.core:core:1.0.0'
-### 4.本地仓库
+### 3.本地仓库
 ```
 在core/build.gradle中添加
 1.
@@ -53,7 +52,7 @@ allprojects {
 6.Sync Now之后就可以使用core中的类库了
 ```
 
-### 5 maven
+### 4 maven
 ```
 1.注册  https://bintray.com/signup/oss  亲测使用foxmial邮箱可以注册
 2.在该网站依次创建（组织，在组织下创建maven 仓库）
@@ -67,6 +66,7 @@ buildscript {
 }
 4.
 //发布到jcenter
+//https://github.com/novoda/bintray-release,使用bintray-release插件完成
 apply plugin: 'com.novoda.bintray-release'
 publish {
     userOrg = 'orgid1' //bintray账户下某个组织id
@@ -104,7 +104,7 @@ allprojects {
 
 ```
 
-### 6.jcenter
+### 5.jcenter
 ```
 在上述bintray仓库中找到core,找到 add to jcenter ，提交之后等待审核，成功之后会收到邮件
 
