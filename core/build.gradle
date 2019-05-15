@@ -8,9 +8,12 @@ publish {
     groupId = 'com.example.core' //maven仓库下库的包名，一般为模块包名
     artifactId = 'core' //项目名称
     publishVersion = '1.0.0' //版本号
-    desc = 'test core library' //项目介绍，可以不写
-    website = '' //项目主页，可以不写
+    desc = 'util library' //项目介绍，可以不写
+    website = 'https://github.com/liuhaipeng/TestMaven' //亲测不写无法成功
 }
+//执行上传任务到bintray上，成功之后会在网站看到上传上去的项目，就可以使用了
+//gradlew clean build bintrayUpload -PbintrayUser=lhp -PbintrayKey=219e22864958870e718116f7d78cd0216c3be23a -PdryRun=false
+
 //发布到本地仓库
 //uploadArchives {
 //    repositories.mavenDeployer {
@@ -20,6 +23,8 @@ publish {
 //        pom.version = "1.0.0" // 版本号
 //    }
 //}
+
+
 //打包main目录下代码和资源的 task
 task androidSourcesJar(type: Jar) {
     classifier = 'sources'

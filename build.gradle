@@ -24,6 +24,9 @@ allprojects {
 //        maven {
 //            url 'file://F:\\Android\\as_project\\SmartRefreshLayout-release\\TestMaven\\repository'
 //        }
+
+        //https://bintray.com仓库地址,自己的
+        maven { url 'https://dl.bintray.com/orgid1/maven' }
     }
 }
 
