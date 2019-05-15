@@ -9,12 +9,11 @@ library可以放在本地或者在maven、jcenter
 最终目的方式： implementation 'com.example.core:core:1.0.0'
 ### 3.本地仓库
 ```
-在core/build.gradle中添加
-1.
+
+1.在core/build.gradle中添加
 //发布到本地仓库
 //apply plugin: 'maven'
-2.
-//发布到本地仓库
+2.//发布到本地仓库
 uploadArchives {
     repositories.mavenDeployer {
        repository(url: uri('../repository')) // 配置本地仓库路径，项目根目录下的repository目录中
@@ -36,8 +35,8 @@ artifacts {
 
 3.Sync Now 之后，找到Gradle projects窗口中的core/Tasks/upload/uploadArchives，双击执行，成功之后会在会提示build successful
 
-在TestMaven/build.gradle中添加
-4.
+
+4.在TestMaven/build.gradle中添加
 allprojects {
     repositories { 
        //本地Maven仓库地址
@@ -46,8 +45,8 @@ allprojects {
        } 
     }
 }
-在app/build.gradle中添加
-5.
+
+5.在app/build.gradle中添加
  implementation 'com.example.core:core:1.0.0'
 6.Sync Now之后就可以使用core中的类库了
 ```
@@ -56,15 +55,14 @@ allprojects {
 ```
 1.注册  https://bintray.com/signup/oss  亲测使用foxmial邮箱可以注册
 2.在该网站依次创建（组织，在组织下创建maven 仓库）
-在TestMaven/build.gradle中添加
-3.
+3.在TestMaven/build.gradle中添加
 buildscript {
     dependencies {
         //jcenter上传到jcenter的工具类
         classpath 'com.novoda:bintray-release:0.9.1'
     }
 }
-4.
+4.在core/build.gradle中添加
 //发布到jcenter
 //https://github.com/novoda/bintray-release,使用bintray-release插件完成
 apply plugin: 'com.novoda.bintray-release'
@@ -90,16 +88,16 @@ artifacts {
 //gradlew clean build bintrayUpload -PbintrayUser=lhp -PbintrayKey=219e22864958870e718116f7d78cd0216c3be23a -PdryRun=false
 成功后会提示build successful ，这时候就能在远程bintray仓库中 【 组织/maven/ 】下看到core了 
 
-在TestMaven/build.gradle中添加
-6.使用 
+
+6. 在TestMaven/build.gradle中添加
 allprojects {
     repositories { 
         //https://bintray.com仓库地址,自己的
         maven { url 'https://dl.bintray.com/orgid1/maven' }
     }
 }
-在app/build.gradle中添加   implementation 'com.example.core:core:1.0.0'
-7.Sync Now之后就可以使用core中的类库了
+7.在app/build.gradle中添加   implementation 'com.example.core:core:1.0.0'
+8.Sync Now之后就可以使用core中的类库了
 
 
 ```
@@ -117,5 +115,8 @@ allprojects {
 在app/build.gradle中添加   implementation 'com.example.core:core:1.0.0'
 Sync Now之后就可以使用core中的类库了
 ```
+
+[参考文章](https://blog.csdn.net/xmxkf/article/details/80674232)
+
 
 
