@@ -1,8 +1,10 @@
+PS:上传自己的library 到 jcenter,maven
+
 ### 1、Maven是什么？
 让项目可重复使用、易维护、更容易理解,是一个项目管理工具，主要用于存放一些类库、插件等方便共享。
 ### 2.Maven仓库在哪里？ 
 Maven 就类似git，gi作用重在区别版本之间的差异，而Maven作用重在共享依赖库。
-Maven仓库和git一样，可以放在本地，可以放在maven、jcenter
+依赖包可以放在本地或者在maven、jcenter
 ### 3.目的
 我们最终需要发布的library是core
 最终目的方式： implementation 'com.example.core:core:1.0.0'
